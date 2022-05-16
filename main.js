@@ -28,26 +28,26 @@ let track = document.createElement('audio');
 let All_song = [
    {
      name: "Imminent Demise",
-     path: "data/music/1.mp3",
-     img: "data/img/img.png",
+     path: "1.mp3",
+     img: "img.png",
      singer: "Saruky Ft. CDMUSIC"
    },
    {
      name: "Terrible Sin",
-     path: "data/music/2.mp3",
-     img: "data/img/img.png",
+     path: "2.mp3",
+     img: "img.png",
      singer: "CDMUSIC Ft. Rozebud"
    },
    {
      name: "Last Reel",
-     path: "data/music/3.mp3",
-     img: "data/img/img.png",
+     path: "3.mp3",
+     img: "img.png",
      singer: "Joan Atlas"
    },
    {
      name: "Nightmare Run",
-     path: "data/music/4.mp3",
-     img: "data/img/img.png",
+     path: "4.mp3",
+     img: "img.png",
      singer: "Orenji Music Ft. Rozebud"
    }
 ];
