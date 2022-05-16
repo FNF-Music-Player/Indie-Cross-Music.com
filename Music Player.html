@@ -1,114 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Indie Cross</title>
-    <link rel="icon" href="data/Bendy/data/img/icon.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap">
-<!-- Google Font -->
-<style>
-  --font-size: 3rem;/**
-*  @project   CSS Neon Button
-*  @author    Jamshid Elmi
-*  @created   2022-04-06 23:37:45
-*  @modified  2022-04-06 23:37:45
-*  @tutorial  https://youtu.be/Jqsb06RlQ6g
-*/
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
-
-:root {
-  --clr-neon: #14f7ff;
-  --clr-bg: #001414;
-
-}
-
-*, 
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: var(--clr-bg);
-  color: var(--clr-neon);
-  font-family: "Balsamiq Sans";
-  overflow: hidden;
-}
-
-.neon {
-  margin-top: -150px;
-  font-size: var(--font-size);
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  border: var(--clr-neon) 0.125em solid;
-  padding: 0.25em 1em;
-  border-radius: 0.25em;
-  text-shadow: 
-    0 0 .20em #FFF7,
-    0 0 .30em var(--clr-neon);
-  box-shadow: 
-    inset 0 0 .5em var(--clr-neon),
-          0 0 .5em var(--clr-neon);
-}
-
-.neon::before {
-  content: "";
-  position: absolute;
-  top: 140%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--clr-neon);
-  transform: 
-    perspective(0.2em)
-    rotateX(10deg) 
-    scale(1.3, 0.40);
-  filter: blur(0.5em);
-  opacity: 0.6;
-  pointer-events: none;
-  transition: opacity 100ms linear;
-}
-
-.neon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--clr-neon);
-  box-shadow: 0 0 2em var(--clr-neon);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 100ms linear;
-}
-
-.neon:hover::after {
-  opacity: 1;
-}
-.neon:hover, .neon:focus {
-  color: white;
-}
-.neon:hover::before {
-  opacity: 0.8;
-}
-
-
-</style>
+	<title>Bendy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="data/scripts/style.css">
+    <link rel="icon" href="data/img/icon.ico">
 </head>
-<body style="background-color:black;">
 
-<center><h1 style="color:#ff14bd">Choose A Week</h1></center>
-<center><h1 style="color:#ff14bd">-------------------</h1></center>
-<center><a href="data/Cuphead/index.html" class="neon">Cuphead</a></center>
-<center><a href="data/Sans/index.html" class="neon">Sans</a></center>
-<center><a href="data/Bendy/Music Player.html" class="neon">Bendy</a></center>
-<center><h1 style="color:#ff14bd">-------------------</h1></center>
-<center><h1 style="color:#ff14bd">HTML Not Complete</h1></h1></center>
+<body style="background: linear-gradient(to right, #000000, #d08836);">
+
+  <div class="main">
+  	<p id="logo"><i class="fa fa-music"></i>Music</p>
+    
+        <!-- show_song_number -->
+        <div class="show_song_no">
+          <p id="present">1</p>
+          <p>/</p>
+          <p id="total">4</p>
+        </div>
+
+
+    <!--- left part --->
+     <div class="left">
+
+      <!--- song img --->
+      <img id="track_image">
+         <div class="volume">
+            <p id="volume_show">90</p>
+            <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+            <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
+         </div>
+
+     </div>
+ 
+     <!--- right part --->
+  	 <div class="right">
+       <!--- song title & artist name --->
+       <div class="song_detail">
+           <p id="title">title.mp3</p>
+           <p id="artist">Artist name</p>
+       </div>
+
+      <!--- middle part --->
+  	 	<div class="middle">
+  	       <button onclick="previous_song()" id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+      	   <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+  	       <button onclick="next_song()" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+  	   </div>
+
+       <!--- song duration part --->
+        <div class="duration">
+           <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+           <button id="auto" onclick="autoplay_switch()">Auto &nbsp;<i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+        </div>
+           
+  	</div>
+
+
+  </div>
+   
+  <!--- Add javascript file --->
+  <script src="data/scripts/main.js"></script>
+
 </body>
 </html>
